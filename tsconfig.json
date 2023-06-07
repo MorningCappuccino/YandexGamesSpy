@@ -1,5 +1,5 @@
 {
-  "files": ["src/main.ts", "src/content.ts"],
+  "files": ["src/main.ts", "src/ygspy.ts"],
   "compilerOptions": {
     "noImplicitAny": true,
     "target": "es5"

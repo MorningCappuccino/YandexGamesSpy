@@ -9,10 +9,9 @@ var tsify = require("tsify");
 // gulp.task("copy-html", function () {
 //   return gulp.src(paths.pages).pipe(gulp.dest("dist"));
 // });
-
 gulp.task(
   "default",
-  gulp.series(function () {
+  function () {
     return browserify({
       basedir: ".",
       debug: true,
@@ -24,5 +23,5 @@ gulp.task(
       .bundle()
       .pipe(source("bundle.js"))
       .pipe(gulp.dest("dist"));
-  })
+  }
 );

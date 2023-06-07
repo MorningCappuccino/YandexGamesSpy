@@ -1,4 +1,4 @@
-import { YandexGamesSpy } from './content';
+import { YandexGamesSpy } from "./ygspy";
 
 function hello(compiler: string) {
   console.log(`Hello from ${compiler}`);
