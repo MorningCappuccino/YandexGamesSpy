@@ -1,0 +1,14 @@
+:root {
+  --text-gray: rgb(158, 158, 158);
+}
+
+.egs-wrapper {
+  font-size: 12px;
+  background-color: #ffcdd2;
+  padding: 8px 6px;
+  border-radius: 6px;
+}
+
+.egs-wrapper .egs-label {
+  color: var(--text-gray);
+}

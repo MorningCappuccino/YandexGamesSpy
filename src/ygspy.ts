@@ -47,12 +47,14 @@ export function YandexGamesSpy() {
             const playersEl = document.createElement("div");
             const firstPublished = document.createElement("div");
 
-            wrapper.style.backgroundColor = "#fc8b83";
-            wrapper.style.fontSize = "14px";
+            playersEl.classList.add("egs-players-count");
+            wrapper.classList.add("egs-wrapper");
 
-            playersEl.innerHTML = "Players: " + game.playersCount;
+            playersEl.innerHTML =
+              "<span class='egs-label'>Players </span>" + game.playersCount;
             firstPublished.innerHTML =
-              "Release: " + moment(game.firstPublished * 1000).format("ll");
+              "<span class='egs-label'>Release </span>" +
+              moment(game.firstPublished * 1000).format("ll");
             wrapper.append(playersEl);
             wrapper.append(firstPublished);
             el.append(wrapper);
