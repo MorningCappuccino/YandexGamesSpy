@@ -14,8 +14,7 @@ export function YandexGamesSpy() {
   console.log(appIDs);
 
   async function getGamesInfo() {
-    const gameInfoUrl =
-      "https://yandex.com/games/api/catalogue/v2/get_games?lang=en&draft=false";
+    const gameInfoUrl = "https://yandex.com/games/api/catalogue/v2/get_games?lang=en&draft=false";
 
     let result = await fetch(gameInfoUrl, {
       method: "POST",
@@ -38,6 +37,21 @@ export function YandexGamesSpy() {
     firstPublished: number;
   };
 
+  function ColorWrapperByPublishedDate(wrapper: Element, datePublished: number) {
+    let monthPassed: number = moment().diff(datePublished, "month");
+    let daysPassed: number = moment().diff(datePublished, "days");
+
+    console.log("monthPassed: " + monthPassed);
+
+    if (monthPassed < 12) {
+      wrapper.classList.add("yellow");
+    }
+
+    if (daysPassed < 30) {
+      wrapper.classList.add("green");
+    }
+  }
+
   function renderGameInfo(el: Element, game: Game) {
     const wrapper = document.createElement("div");
     const playersEl = document.createElement("div");
@@ -46,12 +60,11 @@ export function YandexGamesSpy() {
     playersEl.classList.add("egs-players-count");
     wrapper.classList.add("egs-wrapper");
 
-    playersEl.innerHTML =
-      "<span class='egs-label'>Players </span>" +
-      numBeautifier(game.playersCount);
+    ColorWrapperByPublishedDate(wrapper, game.firstPublished * 1000);
+
+    playersEl.innerHTML = "<span class='egs-label'>Players </span>" + numBeautifier(game.playersCount);
     firstPublished.innerHTML =
-      "<span class='egs-label'>Release </span>" +
-      moment(game.firstPublished * 1000).format("ll");
+      "<span class='egs-label'>Release </span>" + moment(game.firstPublished * 1000).format("ll");
     wrapper.append(playersEl);
     wrapper.append(firstPublished);
     el.append(wrapper);

@@ -1,12 +1,23 @@
 :root {
   --text-gray: rgb(158, 158, 158);
+  --wrapper-green: #B9F6CA;
+  --wrapper-red: #FFCDD2;
+  --wrapper-yellow: #FFFDE7;
 }
 
 .egs-wrapper {
   font-size: 12px;
-  background-color: #ffcdd2;
+  background-color: var(--wrapper-red);
   padding: 8px 6px;
   border-radius: 6px;
+}
+
+.egs-wrapper.yellow {
+  background-color: var(--wrapper-yellow);
+}
+
+.egs-wrapper.green {
+  background-color: var(--wrapper-green);
 }
 
 .egs-wrapper .egs-label {
