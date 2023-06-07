@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Yandex Games Spy",
-  "version": "1.2",
+  "version": "1.5",
   "description": "Show additional games info on the game list",
 
   "icons": {
@@ -17,7 +17,7 @@
     {
       "js": ["bundle.js"],
       "css": ["src/css/main.css"],
-      "matches": ["https://yandex.com/games/*", "https://yandex.com/games/*"]
+      "matches": ["https://yandex.com/games/*", "https://yandex.ru/games/*"]
     }
   ],
   "permissions": ["scripting"]
