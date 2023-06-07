@@ -12,3 +12,7 @@
 .egs-wrapper .egs-label {
   color: var(--text-gray);
 }
+
+.egs-players-count {
+  margin-bottom: 5px;
+}

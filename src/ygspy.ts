@@ -1,5 +1,6 @@
 // Copyright 2023 MornigCappuccino
 import * as moment from "moment";
+import { numBeautifier } from "./numBeautifier";
 
 export function YandexGamesSpy() {
   let appIDs: number[] = [];
@@ -51,7 +52,8 @@ export function YandexGamesSpy() {
             wrapper.classList.add("egs-wrapper");
 
             playersEl.innerHTML =
-              "<span class='egs-label'>Players </span>" + game.playersCount;
+              "<span class='egs-label'>Players </span>" +
+              numBeautifier(game.playersCount);
             firstPublished.innerHTML =
               "<span class='egs-label'>Release </span>" +
               moment(game.firstPublished * 1000).format("ll");
