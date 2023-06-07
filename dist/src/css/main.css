@@ -1,8 +1,13 @@
 :root {
   --text-gray: rgb(158, 158, 158);
   --wrapper-green: #B9F6CA;
+  --wrapper-green2: #92C47C;
+  --wrapper-light-green2: #D8EAD3;
   --wrapper-red: #FFCDD2;
+  --wrapper-red2: #F4CCCC;
   --wrapper-yellow: #FFFDE7;
+  --wrapper-yellow2: #FFF2CC;
+  --wrapper-violet: #B4A7D7;
 }
 
 .egs-wrapper {
@@ -20,10 +25,30 @@
   background-color: var(--wrapper-green);
 }
 
+/* 2 */
+.egs-wrapper.yellow2 {
+  background-color: var(--wrapper-yellow2);
+}
+
+/* 3 */
+.egs-wrapper.light-green2 {
+  background-color: var(--wrapper-light-green2);
+}
+
+/* 4 */
+.egs-wrapper.green2 {
+  background-color: var(--wrapper-green2);
+}
+
+/* 5 */
+.egs-wrapper.violet {
+  background-color: var(--wrapper-violet);
+}
+
 .egs-wrapper .egs-label {
   color: var(--text-gray);
 }
 
-.egs-players-count, egs-players-vs-days {
+.egs-players-count, .egs-first-published {
   margin-bottom: 5px;
 }

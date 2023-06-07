@@ -49,6 +49,6 @@
   color: var(--text-gray);
 }
 
-.egs-players-count, egs-players-vs-days {
+.egs-players-count, .egs-first-published {
   margin-bottom: 5px;
 }

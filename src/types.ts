@@ -1,18 +1,22 @@
 export type Games = {
-  games: Game[];
+    games: Game[];
 };
 
 export type Game = {
-  appID: number;
-  playersCount: number;
-  firstPublished: number;
+    appID: number;
+    playersCount: number;
+    firstPublished: number;
 };
 
 export type Config = {
-  colorsBy: ColorsBy;
+    colorsBy: ColorsBy;
 };
 
 export enum ColorsBy {
-  DatePublished,
-  PlayersCount,
+    DatePublished,
+    PlayersCount,
 }
+
+export type Rank = {
+    number: [number, number];
+};
