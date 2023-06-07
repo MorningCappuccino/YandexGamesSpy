@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Yandex Games Spy",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Show additional games info on the game list",
 
   "icons": {
@@ -12,7 +12,7 @@
   },
   "content_scripts": [
     {
-      "js": ["dist/main.js"],
+      "js": ["dist/bundle.js"],
       "matches": ["https://yandex.com/games/*", "https://yandex.com/games/*"]
     }
   ]
