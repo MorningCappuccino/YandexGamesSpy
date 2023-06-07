@@ -1,0 +1,25 @@
+{
+  "name": "yandexgamesspy",
+  "version": "1.0.0",
+  "description": "Show additional games info on the game list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "parcer",
+    "spy",
+    "extension",
+    "chrome"
+  ],
+  "author": "MorningCappuccino",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "gulp": "^4.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "tsify": "^5.0.4",
+    "typescript": "^5.1.3",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}
