@@ -1,6 +1,6 @@
 // Copyright 2023 MornigCappuccino
 import * as moment from "moment";
-import { numBeautifier } from "./numBeautifier";
+import { numBeautifier, getRidOfDuplicates } from "./numBeautifier";
 
 export function YandexGamesSpy() {
   let appIDs: number[] = [];
@@ -10,6 +10,7 @@ export function YandexGamesSpy() {
     appIDs.push(+el.getAttribute("href").match(/\d+/)[0]);
   });
 
+  appIDs = getRidOfDuplicates(appIDs);
   console.log(appIDs);
 
   async function getGamesInfo() {
@@ -37,6 +38,25 @@ export function YandexGamesSpy() {
     firstPublished: number;
   };
 
+  function renderGameInfo(el: Element, game: Game) {
+    const wrapper = document.createElement("div");
+    const playersEl = document.createElement("div");
+    const firstPublished = document.createElement("div");
+
+    playersEl.classList.add("egs-players-count");
+    wrapper.classList.add("egs-wrapper");
+
+    playersEl.innerHTML =
+      "<span class='egs-label'>Players </span>" +
+      numBeautifier(game.playersCount);
+    firstPublished.innerHTML =
+      "<span class='egs-label'>Release </span>" +
+      moment(game.firstPublished * 1000).format("ll");
+    wrapper.append(playersEl);
+    wrapper.append(firstPublished);
+    el.append(wrapper);
+  }
+
   function seedInfo(gamesInfo: Promise<Games>) {
     gamesInfo.then((res) => {
       console.log(res);
@@ -44,22 +64,7 @@ export function YandexGamesSpy() {
         // console.log(game.playersCount)
         document.querySelectorAll(".game-card__game-url").forEach((el) => {
           if (+el.getAttribute("href").match(/\d+/)[0] == game.appID) {
-            const wrapper = document.createElement("div");
-            const playersEl = document.createElement("div");
-            const firstPublished = document.createElement("div");
-
-            playersEl.classList.add("egs-players-count");
-            wrapper.classList.add("egs-wrapper");
-
-            playersEl.innerHTML =
-              "<span class='egs-label'>Players </span>" +
-              numBeautifier(game.playersCount);
-            firstPublished.innerHTML =
-              "<span class='egs-label'>Release </span>" +
-              moment(game.firstPublished * 1000).format("ll");
-            wrapper.append(playersEl);
-            wrapper.append(firstPublished);
-            el.append(wrapper);
+            renderGameInfo(el, game);
           }
         });
       });

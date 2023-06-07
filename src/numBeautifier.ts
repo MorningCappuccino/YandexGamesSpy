@@ -20,3 +20,9 @@ export function numBeautifier(num: number): string {
 
   return modNum.split("").reverse().join("");
 }
+
+/*
+ ** Example: [1, 5, 2, 1] -> [1, 5, 2]
+ */
+export const getRidOfDuplicates = (arry: number[]) =>
+  arry.filter((item: number, index: number) => arry.indexOf(item) === index);
