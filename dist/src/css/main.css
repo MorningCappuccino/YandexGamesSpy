@@ -49,6 +49,6 @@
   color: var(--text-gray);
 }
 
-.egs-players-count, .egs-first-published {
+.egs-players-count, .egs-first-published, egs-life-span {
   margin-bottom: 5px;
 }
