@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Yandex Games Spy",
-    "version": "1.5",
+    "version": "1.6",
     "description": "Show additional games info on the game list",
 
     "icons": {

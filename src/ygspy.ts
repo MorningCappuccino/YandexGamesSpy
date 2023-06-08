@@ -15,8 +15,27 @@ export function YandexGamesSpy(config: Config): void {
     appIDs = getRidOfDuplicates(appIDs);
     console.log(appIDs);
 
+    function getLocale() {
+        let res = "ru";
+        const hostDomain = location.host.match(/\.(\w+)/)[1];
+
+        switch (hostDomain) {
+            case "com":
+                res = "en";
+                break;
+            case "ru":
+                res = "ru";
+                break;
+            default:
+                res = "ru";
+        }
+
+        return [res, hostDomain];
+    }
+
     async function getGamesInfo() {
-        const gameInfoUrl = "https://yandex.com/games/api/catalogue/v2/get_games?lang=en&draft=false";
+        const [locale, hostDomain] = getLocale();
+        const gameInfoUrl = `https://yandex.${hostDomain}/games/api/catalogue/v2/get_games?lang=${locale}&draft=false`;
 
         let result = await fetch(gameInfoUrl, {
             method: "POST",
